@@ -1,4 +1,4 @@
-import { Container, AddMovie } from "./styles";
+import { Container, AddMovie, Title, Content } from "./styles";
 import { Header } from "../../components/Header";
 import { FiPlus } from "react-icons/fi";
 import { Frame } from "../../components/Frame"
@@ -7,17 +7,20 @@ export function Home(){
     return(
         <Container>
             <Header/>
-            <header>
+            <Title>
                 <h1>Meus filmes</h1>
                 <AddMovie> 
                     <FiPlus size={20}/>
                      Adicionar filme 
                 </AddMovie>
-            </header>
+            </Title>
 
-            <main>
-                <Frame data={{title: 'Interestellar', rating: '3'}}/>
-            </main>
+            <Content>
+                <Frame data={{name: "Interestellar", rating: "4"}}/>
+                <Frame data={{name: "Interestellar", rating: "4"}}/>
+                <Frame data={{name: "Interestellar", rating: "4"}}/>
+                <Frame data={{name: "Interestellar", rating: "4"}}/>
+            </Content>
         </Container>
     )
 }
