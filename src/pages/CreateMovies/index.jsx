@@ -1,25 +1,45 @@
-import { Container, Content } from "./styles";
+import { Container, Content, Title, Choose } from "./styles";
 import { Header } from "../../components/Header"
-import { FiPlus } from "react-icons/fi"
+import { FiArrowLeft } from "react-icons/fi"
 import { Input } from "../../components/Input"
+import { MovieItem } from "../../components/MovieItem";
+
 
 export function CreateMovies(){
     return(
         <Container>
             <Header/>
-            <a href="#">
-                <FiPlus/>
-                Voltar
-            </a>
-
-            <h1>Novo filme</h1>
-
+            <Title>
+                <a href="#">
+                    <FiArrowLeft/>
+                    Voltar
+                </a>
+                
+                <h1>Novo filme</h1>
+            </Title>
             <Content>
                 <div>
-                <Input placeholder="Título" type="text"/>
-                <Input placeholder="Sua nota (de 0 a 5)" type="text"/>
+                    <Input placeholder="Título" type="text"/>
+                    <Input placeholder="Sua nota (de 0 a 5)" type="text"/>
                 </div>
-                <textarea name="" id="" cols="30" rows="10" placeholder="Observações"></textarea>
+                <textarea placeholder="Observações"></textarea>
+
+                <h2>Marcadores</h2>
+
+                <section>
+                    <MovieItem value="React"/> 
+                    <MovieItem value="Novo marcador" isNew/>               
+                </section>
+
+                <Choose>
+                    <button class="excluir">
+                        Excluir filme
+                    </button>
+
+                    <button  class="salvar">
+                        Salvar filme
+                    </button>
+                </Choose>
             </Content>
         </Container>
     )

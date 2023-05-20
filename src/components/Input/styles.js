@@ -21,11 +21,13 @@ export const Container = styled.div`
         padding: 1.2rem;
         color: ${({theme}) => theme.COLORS.GRAY_100};
 
+        &::placeholder{
+            color: ${({theme}) => theme.COLORS.GRAY_100};
+            font-size: 1.6rem;
+            font-weight: 400;
+        }
     }
     
-    &::placeholder{
-        color: ${({theme}) => theme.COLORS.GRAY_100};
-    }
 
     > svg {
         margin-left: 1.6rem;
