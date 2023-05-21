@@ -14,6 +14,12 @@ export default createGlobalStyle`
         font-size: 1.6rem;
     }
 
+    body, input, button, textarea{
+        font-family: 'Roboto Slab', serif;
+        font-size: 1.6rem;
+        outline: none;
+    }
+
     a{
         text-decoration: none;
     }
@@ -26,5 +32,4 @@ export default createGlobalStyle`
     button:hover, a:hover{
         filter: brightness(0.9);
     }
-
 `;

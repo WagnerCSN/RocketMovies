@@ -39,13 +39,14 @@ export const Profile = styled(Link)`
         a{
             font-size: 1.4rem;
             font-weight: 400;
-            color: #948F99;
+            color: ${({theme}) => theme.COLORS.GRAY_100};
             align-self: end;
         }
     }
+
     img{
-        height: 56px;
-        width: 56px;
+        height: 5.6rem;
+        width: 5.6rem;
         border-radius: 50%;
     }
 `;

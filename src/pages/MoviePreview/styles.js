@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     display: grid;
-    grid-template-rows: 116px 61px auto;
+    grid-template-rows: 11.6rem 6.1rem auto;
     grid-template-areas: 
     "header"
     "title"
@@ -11,8 +11,8 @@ export const Container = styled.div`
 
 export const Title = styled.div`
     grid-area: "title";
-    padding:  0 123px;
-    margin-top: 40px;
+    padding:  0 12.3rem;
+    margin-top: 4rem;
     > a{
         font-size: 1.6rem;
         color: ${({theme}) => theme.COLORS.PINK};
@@ -21,24 +21,24 @@ export const Title = styled.div`
 
 export const Content = styled.div`
     grid-area: "content";
-    padding: 0 123px;
-    margin-top: 24px;
+    padding: 0 12.3rem;
+    margin-top: 2.4rem;
     > div:nth-child(1){
         display: flex;
-        gap: 20px;
-        font-size: 36px;
+        gap: 2rem;
+        font-size: 3.6rem;
         font-weight: 500;
-        margin-bottom: 24px;
+        margin-bottom: 2.4rem;
     }
 
-    >div:nth-child(2){
+    > div:nth-child(2){
         display: flex;
-        font-size: 16px;
-        margin-bottom: 40px;
+        font-size: 1.6rem;
+        margin-bottom: 4rem;
     }
     
     > p{
         text-align: justify;
-        font-size: 16px;
+        font-size: 1.6rem;
     }
 `;

@@ -12,27 +12,26 @@ export const Form = styled.form`
     flex-direction: column;
     justify-content: center;
     padding: 0 13.6rem;
-    h1{
+    > h1{
         font-size: 4.8rem;
         font-weight: 700;
         color: ${({theme}) => theme.COLORS.PINK};
     }
     
-    p{
+    > p{
         font-size: 1.4rem;
         font-weight: 400;
         color: ${({theme}) => theme.COLORS.GRAY_300};
-        
     }
     
-    h2{
+    > h2{
         font-size: 2.4rem;
         font-weight: 500;
         color: ${({theme}) => theme.COLORS.WHITE};
         margin: 4.8rem 0;
     }
     
-    a{
+    > a{
         display: flex;
         align-items: center;
         justify-content: center;
@@ -41,14 +40,11 @@ export const Form = styled.form`
         font-weight: 400;
         margin-top: 4.2rem;
         text-align: center;
-        
     }
-
 `;
 
 export const Background = styled.div`
     flex: 1;
     background: url(${backgroundImg}) no-repeat center center;
     background-size: cover;
-
 `;

@@ -3,18 +3,18 @@ import styled from "styled-components";
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 24px;
-    padding: 32px;
-    margin-bottom: 24px;
-    height: 222px;
-    border-radius: 10px;
+    gap: 2.4rem;
+    padding: 3.2rem;
+    margin-bottom: 2.4rem;
+    height: 22.2rem;
+    border-radius: 1rem;
     background-color: ${({theme}) => theme.COLORS.BACKGROUND_900};
     >div{
         display: flex;
         flex-direction: column;
-        gap: 5px;
+        gap: .5rem;
         width: 100%;
-        height: 52px;
+        height: 5.2rem;
         h1{
             font-size: 1.6rem;
             color: ${({theme}) => theme.COLORS.PINK};
@@ -28,22 +28,22 @@ export const Container = styled.div`
 
     main{
         p{
-            height: 52px;
-            font-size: 16px;
+            height: 5.2rem;
+            font-size: 1.6rem;
             font-weight: 400;
-            line-height: 18px;
-            margin-bottom: 15px;
+            line-height: 1.8rem;
+            margin-bottom: 1.5rem;
             overflow: hidden;
             text-overflow: clip;
             display: -webkit-box;
             -webkit-box-orient: vertical;
             -webkit-line-clamp: 2;
             text-align: justify;
-            padding: 15px 0;
+            padding: 1.5rem 0;
         }
     }
     footer{
         display: flex;
-        margin-right: 8px;
+        margin-right: .8rem;
     }
 `;

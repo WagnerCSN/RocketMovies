@@ -11,7 +11,6 @@ export function SignIn(){
            <Form>
                 <h1>RocketMovies</h1>
                 <p>Aplicação para acompanhar tudo que assistir.</p>
-           
 
                 <h2>Faça seu login</h2>
 

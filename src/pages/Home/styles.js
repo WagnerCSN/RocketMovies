@@ -5,7 +5,7 @@ export const Container = styled.div`
     width: 100%;
     height: 100vh;
     display: grid;
-    grid-template-rows: 116px 132px auto;
+    grid-template-rows: 11.6rem 13.2rem auto;
     grid-template-areas: 
     "header"
     "title"
@@ -35,17 +35,16 @@ export const Content = styled.div`
        scrollbar-width: thin;
        scrollbar-color: ${({theme}) => theme.COLORS.PINK} transparent;
        &::-webkit-scrollbar {
-         width: 8px; 
-         padding-right: 120px; 
-        }
+         width: .8rem; 
+       }
 
-        &::-webkit-scrollbar-track {
+       &::-webkit-scrollbar-track {
         background: transparent;  
-        }
+       }
 
-        &::-webkit-scrollbar-thumb {
-            background-color: ${({theme}) => theme.COLORS.PINK};    
-            border-radius: 8px;
+       &::-webkit-scrollbar-thumb {
+        background-color: ${({theme}) => theme.COLORS.PINK};    
+        border-radius: .8rem;
         }
 `;
 
@@ -56,7 +55,7 @@ export const AddMovie = styled(Link)`
     align-items: center;
     justify-content: center;
     background-color: ${({theme}) => theme.COLORS.PINK};
-    color: #1C1B1E;
+    color: ${({theme}) => theme.COLORS.BACKGROUND_800};
     font-weight: 400;
     font-size: 1.4rem;
     white-space: nowrap;
@@ -66,8 +65,7 @@ export const AddMovie = styled(Link)`
     border-radius: 1rem;
 
     > svg{
-        margin-right: 8px;
+        margin-right: .8rem;
     }
-    
 `;
 

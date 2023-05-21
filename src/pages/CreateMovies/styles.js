@@ -13,56 +13,59 @@ export const Container = styled.div`
 
 export const Title = styled.div`
     grid-area: "title";
-    margin: 40px 123px 24px 123px;
+    margin: 4rem 12.3rem 2.4rem 12.3rem;
     > a{
         font-size: 1.6rem;
         color: ${({theme}) => theme.COLORS.PINK};
         svg{
-            margin-right: 8px;
+            margin-right: .8rem;
         }
     }
     h1{
-        font-size: 36px;
+        font-size: 3.6rem;
         font-weight: 500;
-        line-height: 47px;
+        line-height: 4.7rem;
         text-align: left;
-        margin-top: 24px;
+        margin-top: 2.4rem;
     }
 `;
 
 export const Content = styled.div`
     grid-area: "content";
-    margin-inline: 123px;
+    margin-inline: 12.3rem;
     overflow-y: auto;
     scrollbar-width: thin;
-       scrollbar-color: ${({theme}) => theme.COLORS.PINK} transparent;
-       &::-webkit-scrollbar {
-         width: 8px;
+    scrollbar-color: ${({theme}) => theme.COLORS.PINK} transparent;
+    &::-webkit-scrollbar {
+        width: .8rem;
     
-        }
+    }
 
-        &::-webkit-scrollbar-track {
+    &::-webkit-scrollbar-track {
         background: transparent;  
-        }
+    }
 
-        &::-webkit-scrollbar-thumb {
-            background-color: ${({theme}) => theme.COLORS.PINK};    
-            border-radius: 8px;
-        }
+    &::-webkit-scrollbar-thumb {
+        background-color: ${({theme}) => theme.COLORS.PINK};    
+        border-radius: .8rem;
+    }
+    
     > div{ 
         display: flex;
-        gap: 56px;
+        gap: 5.6rem;
     }
+
     > textarea{
         border: none;
         resize: none;
-        height: 274px;
+        height: 27.4rem;
         width: 100%;
-        border-radius: 10px;
-        padding: 19px 16px 19px 16px;
+        border-radius: 1rem;
+        padding: 1.9rem 1.6rem;
         background-color: ${({theme}) => theme.COLORS.BACKGROUND_700};
         color: ${({theme}) => theme.COLORS.GRAY_100};
-        margin-top: 40px;
+        margin-top: 4rem;
+        font-size: 1.6rem;
         
         &::placeholder{
             font-size: 1.6rem;
@@ -72,40 +75,42 @@ export const Content = styled.div`
     }
 
     > h2{
-        font-size: 25px;
-        margin-block: 40px 24px;
+        font-size: 2.5rem;
+        margin-block: 4rem 2.4rem;
     }
     >section{
         display: flex;
         flex-wrap: wrap;
-        gap: 40px;
+        gap: 4rem;
         background-color: ${({theme}) => theme.COLORS.BACKGROUND_500};
-        border-radius: 10px;
-        padding: 16px;
+        border-radius: 1rem;
+        padding: 1.6rem;
     }
 `;
 
 export const Choose = styled.div`
-    margin-block: 50px 93px;
+    margin-block: 5rem 9.3rem;
 
     .excluir{
         width: 100%;
         background-color: ${({theme}) => theme.COLORS.BACKGROUND_500};
         color: ${({theme}) => theme.COLORS.PINK};
-        height: 56px;
-        border-radius: 10px;
+        height: 5.6rem;
+        border-radius: 1rem;
         border: none;
         font-size: 1.6rem;
+        font-weight: 400;
     }
 
     .salvar{
         width: 100%;
         background-color: ${({theme}) => theme.COLORS.PINK};
         color: ${({theme}) => theme.COLORS.BACKGROUND_600};
-        height: 56px;
-        border-radius: 10px;
+        height: 5.6rem;
+        border-radius: 1rem;
         border: none;
         font-size: 1.6rem;
+        font-weight: 600;
     }
 `
 

@@ -8,19 +8,19 @@ export const Container = styled.div`
     color: ${({theme}) => theme.COLORS.GRAY_100};
     line-height: 2.1rem;
     font-weight: 400;
-    border-radius: 10px;
+    border-radius: 1rem;
     border: none;
-    font-size: 1.6rem;
     margin-bottom: 0.8rem;
     
     > input{
+        font-size: 1.6rem;
         width: 100%;
         height: 5.6rem;
         background: transparent;
         border: none;
         padding: 1.2rem;
         color: ${({theme}) => theme.COLORS.GRAY_100};
-
+        
         &::placeholder{
             color: ${({theme}) => theme.COLORS.GRAY_100};
             font-size: 1.6rem;
@@ -28,7 +28,6 @@ export const Container = styled.div`
         }
     }
     
-
     > svg {
         margin-left: 1.6rem;
     }
