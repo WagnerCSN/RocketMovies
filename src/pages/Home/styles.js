@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
     width: 100%;
@@ -48,7 +49,7 @@ export const Content = styled.div`
         }
 `;
 
-export const AddMovie = styled.button`
+export const AddMovie = styled(Link)`
     width: 20.7rem;
     height: 4.8rem;
     display: flex;

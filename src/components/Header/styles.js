@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
     grid-area: "header";
@@ -19,7 +20,7 @@ export const Brand = styled.div`
     background: transparent;
     color: ${({theme}) => theme.COLORS.PINK};
 `;
-export const Profile = styled.div`
+export const Profile = styled(Link)`
     display: flex;
     gap: 0.9rem;
     > div{
@@ -32,6 +33,7 @@ export const Profile = styled.div`
             white-space: nowrap; //não permite quebrar linha
             font-size: 1.4rem;
             font-weight: 700;
+            color: ${({theme}) => theme.COLORS.WHITE};
         }
 
         a{

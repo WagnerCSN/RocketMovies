@@ -3,17 +3,17 @@ import { Header } from "../../components/Header"
 import { FiArrowLeft } from "react-icons/fi"
 import { Input } from "../../components/Input"
 import { MovieItem } from "../../components/MovieItem";
-
+import { Link } from "react-router-dom";
 
 export function CreateMovies(){
     return(
         <Container>
             <Header/>
             <Title>
-                <a href="#">
+                <Link to="/">
                     <FiArrowLeft/>
                     Voltar
-                </a>
+                </Link>
                 
                 <h1>Novo filme</h1>
             </Title>

@@ -33,7 +33,7 @@ export function SignUp(){
 
                 <Button title="Cadastrar"/>
 
-                <a href="#"> <FiArrowLeft size={20}/>Voltar para o login</a>
+                <Link to="/"> <FiArrowLeft size={20}/>Voltar para o login</Link>
             </Form>
 
             <Background/>

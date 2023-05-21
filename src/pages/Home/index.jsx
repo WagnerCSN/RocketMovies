@@ -3,13 +3,14 @@ import { Header } from "../../components/Header";
 import { FiPlus } from "react-icons/fi";
 import { Frame } from "../../components/Frame"
 
+
 export function Home(){
     return(
         <Container>
             <Header/>
             <Title>
                 <h1>Meus filmes</h1>
-                <AddMovie> 
+                <AddMovie to="/create"> 
                     <FiPlus size={20}/>
                      Adicionar filme 
                 </AddMovie>

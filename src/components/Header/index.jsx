@@ -1,5 +1,6 @@
 import { Container, Brand, Profile } from "./styles";
 import { Input } from "../Input"
+import { Link } from "react-router-dom";
 
 export function Header(){
     return(
@@ -13,10 +14,10 @@ export function Header(){
             type="text"
             />
 
-            <Profile>
+            <Profile to="/profile">
                 <div>
                     <span>Wagner Costa</span>
-                    <a href="#">Sair</a>
+                    <Link>Sair</Link>
                 </div>
                 <img src="https://www.github.com/WagnerCSN.png" alt="Foto de usuário" />
             </Profile>
