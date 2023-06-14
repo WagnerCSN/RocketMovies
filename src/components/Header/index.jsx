@@ -2,9 +2,12 @@ import { Container, Brand, Profile } from "./styles";
 import { Input } from "../Input"
 import { Link } from "react-router-dom";
 import { useAuth } from "../../hooks/auth";
+import { api } from "../../services/api";
+import avatarPlaceholder from "../../assets/avatar_placeholder.svg"
 
 export function Header(){
-    const { signOut } = useAuth();
+    const { signOut, user } = useAuth();
+    const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}`: avatarPlaceholder;
     return(
         <Container>
             <Brand>
@@ -18,10 +21,10 @@ export function Header(){
 
             <Profile to="/profile">
                 <div>
-                    <span>Wagner Costa</span>
+                    <span>{user.name}</span>
                     <Link onClick={signOut}>Sair</Link>
                 </div>
-                <img src="https://www.github.com/WagnerCSN.png" alt="Foto de usuário" />
+                <img src={avatarUrl} alt="Foto de usuário" />
             </Profile>
 
         </Container>

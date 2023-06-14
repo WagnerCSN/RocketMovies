@@ -4,8 +4,20 @@ import { FiArrowLeft } from "react-icons/fi"
 import { Input } from "../../components/Input"
 import { MovieItem } from "../../components/MovieItem";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export function CreateMovies(){
+    const [tags, setTags] = useState([]);
+    const [newtag, setNewTag] = useState("");
+
+    function handleTags(){
+        setTags(prevState => [...prevState, newtag]);
+        setNewTag("");
+    }
+
+    function handleRemoveTag(deleted){
+        setTags(prevState => prevState.filter(tag => tag!== deleted));
+    }
     return(
         <Container>
             <Header/>
@@ -27,8 +39,23 @@ export function CreateMovies(){
                 <h2>Marcadores</h2>
 
                 <section>
-                    <MovieItem value="React"/> 
-                    <MovieItem value="Novo marcador" isNew/>               
+                    {
+                        tags && tags.map((tag, index) => (
+                            <MovieItem 
+                                key={String(index)}
+                                value={tag} 
+                                onClick={()=>{handleRemoveTag(tag)}}
+                            />      
+                        ))
+                    }
+                   
+                    <MovieItem 
+                        isNew
+                        value={newtag} 
+                        placeholder="Novo marcador"
+                        onChange={e => setNewTag(e.target.value)}
+                        onClick={handleTags}
+                    />               
                 </section>
 
                 <Choose>
