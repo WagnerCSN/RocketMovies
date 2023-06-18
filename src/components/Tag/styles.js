@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.span`
     height: 2.4rem;
     border-radius: .8rem;
     padding: .5rem 1.6rem;
@@ -11,6 +11,4 @@ export const Container = styled.div`
     font-size: 1.2rem;
     line-height: 1.4rem;
     text-align: center;
-
-
 `;

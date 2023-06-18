@@ -40,5 +40,21 @@ export const Content = styled.div`
     > p{
         text-align: justify;
         font-size: 1.6rem;
+        margin-top: 40px;
+    }
+
+    #data_user{
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        margin: 24px a 400px;
+        span{
+            font-size: 1.6rem;
+        }
+        img{
+            height: 16px;
+            width: 16px;
+            border-radius: 25%;
+        }
     }
 `;

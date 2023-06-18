@@ -3,12 +3,17 @@ import { Header } from "../../components/Header"
 import { FiArrowLeft } from "react-icons/fi"
 import { Input } from "../../components/Input"
 import { MovieItem } from "../../components/MovieItem";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { api } from "../../services/api"
 
 export function CreateMovies(){
+    const [title, setTitle] = useState("");
+    const [description, setDescription]= useState("");
+    const [rating, setRating] = useState("");
     const [tags, setTags] = useState([]);
     const [newtag, setNewTag] = useState("");
+    const navigate = useNavigate();
 
     function handleTags(){
         setTags(prevState => [...prevState, newtag]);
@@ -18,9 +23,24 @@ export function CreateMovies(){
     function handleRemoveTag(deleted){
         setTags(prevState => prevState.filter(tag => tag!== deleted));
     }
+
+    async function handleSaveMovie(){
+            if(newtag){
+                return alert("Tem uma tag digitada que não foi adicionada!");
+            }
+        
+            await api.post("/movies", {
+                title,
+                description,
+                rating,
+                tags
+            });
+            alert("Filme salvo com sucesso!");
+            navigate("/");
+    }
     return(
         <Container>
-            <Header/>
+            <Header />
             <Title>
                 <Link to="/">
                     <FiArrowLeft/>
@@ -31,16 +51,27 @@ export function CreateMovies(){
             </Title>
             <Content>
                 <div>
-                    <Input placeholder="Título" type="text"/>
-                    <Input placeholder="Sua nota (de 0 a 5)" type="text"/>
+                    <Input 
+                        placeholder="Título" 
+                        type="text"
+                        onChange={e =>setTitle(e.target.value)}
+                    />
+                    <Input 
+                        placeholder="Sua nota (de 0 a 5)" 
+                        type="text"
+                        onChange={e =>setRating(e.target.value)}
+                    />
                 </div>
-                <textarea placeholder="Observações"></textarea>
+                <textarea 
+                    placeholder="Observações"
+                    onChange={e => setDescription(e.target.value)}
+                ></textarea>
 
                 <h2>Marcadores</h2>
 
                 <section>
                     {
-                        tags && tags.map((tag, index) => (
+                        tags.map((tag, index) => (
                             <MovieItem 
                                 key={String(index)}
                                 value={tag} 
@@ -63,7 +94,10 @@ export function CreateMovies(){
                         Excluir filme
                     </button>
 
-                    <button  class="salvar">
+                    <button  
+                        class="salvar"
+                        onClick={handleSaveMovie}    
+                    >
                         Salvar filme
                     </button>
                 </Choose>

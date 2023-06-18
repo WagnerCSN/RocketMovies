@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { api } from "../../services/api"
 
 import { useState } from "react"
+import { Rating} from "../../components/Rating"
 
 export function SignUp(){
     
@@ -36,6 +37,7 @@ export function SignUp(){
     }
     return(
         <Container>
+            <Rating/>
             <Form>
                 <h1>RocketMovies</h1>
                 <p>Aplicação para acompanhar tudo que assistir.</p>
