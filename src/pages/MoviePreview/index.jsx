@@ -12,11 +12,10 @@ import { useAuth } from "../../hooks/auth";
 import timer from "../../assets/timer.svg";
 import { useNavigate } from "react-router-dom";
 
-
 export function MoviePreview(){
     const { user } = useAuth();
-    const [data, setData] = useState({});
-    const [movie, setMovie] = useState({});
+    const [data, setData] = useState([]);
+    const [movie, setMovie] = useState([]);
     const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}`: avatarPlaceholder;
     const navigate = useNavigate();
 
@@ -25,9 +24,11 @@ export function MoviePreview(){
     async function childToParent(childdata){
         const response = await api.get(`/movies?title=${childdata}`);
         setMovie(response.data);
-        movie.map(mo => { mo.id
-            navigate(`/preview/${mo.id}`);
-        })
+        if(movie){
+            await movie.map(mo => { 
+                navigate(`/preview/${mo.id}`);
+            })
+        }
       }
 
     useEffect(() =>{
@@ -38,7 +39,7 @@ export function MoviePreview(){
         fetchMovie()
     },[params])
     return(
-        <Container>
+        <Container >
             <Header childToParent={childToParent}/>
            
             <Title>
@@ -52,12 +53,16 @@ export function MoviePreview(){
                 <Content>
                     <div>
                         <h1>{data.title}</h1>
-                        <Rating 
-                            size={20}
-                            rating={data.rating}
-                        />
-                    </div>
+                        
+                            
+                            <span id="rating" ><Rating 
 
+                                    size={20}
+                                    rating={data.rating}
+                                /></span>
+                                                   
+                       
+                    </div>
                     <div id="data_user">
                         <img src={avatarUrl}/>
                         <span>Por {user.name}</span>

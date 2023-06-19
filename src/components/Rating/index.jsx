@@ -1,22 +1,47 @@
 import { Container } from "./styles";
 import estrela from "../../assets/estrela.svg"
-import { useState } from "react";
+import estrela2 from "../../assets/estrela2.svg"
+import { useState, useEffect } from "react";
 
-export function Rating({rating, size}){
-    const estrelas = [estrela, estrela, estrela, estrela, estrela];
+export function Rating({rating, size, ...rest}){
+    const [estrelas, setEstrelas] = useState([]);
+    let rat = rating;
+    console.log(estrelas);
+    
+    useEffect(() => {
+        function estr(){
+            if(estrelas.length!==0){
+                setEstrelas([]);
+            }
+                let x =1;
+                while(x<=5){
+                let test  = rat>0 ? estrela : estrela2;
+                    setEstrelas(prevState => [...prevState,test]);
+                    rat=rat-1;
+                    x++
+                }
+            
+        }
+        estr();
+    },[rating])
+
 
     return(
-        <Container>
+        <Container {...rest}>
        { 
-        estrelas.map((estrela, index) =>(index<rating&&
+       estrelas.map((estrela, index) =>((index<5 ) &&
             <img 
                 key={String(index)}
-                src={estrela} 
+                src={estrela}   
                 width={size}
             />
             ))
        }
         </Container>
-
     )
 }
+
+
+
+
+

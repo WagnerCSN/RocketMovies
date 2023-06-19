@@ -56,5 +56,9 @@ export const Content = styled.div`
             width: 16px;
             border-radius: 25%;
         }
+
+        #rating{
+            font-size: 1.6rem;
+        }
     }
 `;
