@@ -53,20 +53,24 @@ export function MoviePreview(){
                 <Content>
                     <div>
                         <h1>{data.title}</h1>
-                        
-                            
-                            <span id="rating" ><Rating 
-
-                                    size={20}
-                                    rating={data.rating}
-                                /></span>
-                                                   
-                       
+                        <span id="rating" >
+                            <Rating 
+                                size={20}
+                                rating={data.rating}
+                            />
+                        </span>
                     </div>
+
                     <div id="data_user">
                         <img src={avatarUrl}/>
-                        <span>Por {user.name}</span>
-                        <img src={timer}/> {data.created_at}
+
+                        <span id="user">
+                            Por { user.name}
+                        </span>
+
+                        <img 
+                            src={timer}
+                        /> {data.created_at}
                     </div >
 
                     {
@@ -76,7 +80,6 @@ export function MoviePreview(){
                             title={tags.name}/>
                         ))
                     }
-                    
                     <p>
                         {data.description}
                     </p>

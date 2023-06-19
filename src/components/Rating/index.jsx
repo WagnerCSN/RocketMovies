@@ -6,10 +6,9 @@ import { useState, useEffect } from "react";
 export function Rating({rating, size, ...rest}){
     const [estrelas, setEstrelas] = useState([]);
     let rat = rating;
-    console.log(estrelas);
     
     useEffect(() => {
-        function estr(){
+        function stars(){
             if(estrelas.length!==0){
                 setEstrelas([]);
             }
@@ -20,11 +19,9 @@ export function Rating({rating, size, ...rest}){
                     rat=rat-1;
                     x++
                 }
-            
         }
-        estr();
+        stars();
     },[rating])
-
 
     return(
         <Container {...rest}>

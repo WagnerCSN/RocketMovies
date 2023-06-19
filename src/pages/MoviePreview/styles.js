@@ -60,5 +60,11 @@ export const Content = styled.div`
         #rating{
             font-size: 1.6rem;
         }
+
+        #user{
+            display: flex;
+            font-size: 1.6rem;
+            gap:0px;
+        }
     }
 `;

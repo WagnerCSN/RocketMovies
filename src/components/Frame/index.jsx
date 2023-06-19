@@ -1,20 +1,8 @@
 import { Container }  from "./styles"
 import { Tag } from "../Tag"
 import { Rating } from "../Rating"
-import { api } from "../../services/api"
-import { useState, useEffect } from "react"
 
 export function Frame({data, ...rest}){
-    const [tags, setTags] = useState([]);
-
-    useEffect(() =>{
-        async function fetchTags(){
-            
-            const response = await api.get("/tags");
-            setTags(response.data);
-        }
-        fetchTags();
-    },[])
     return(
         <Container {...rest}>
             <div>
