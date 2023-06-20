@@ -13,6 +13,7 @@ export function CreateMovies(){
     const [rating, setRating] = useState("");
     const [tags, setTags] = useState([]);
     const [newtag, setNewTag] = useState("");
+    const [movie, setMovie] = useState([]);
     const navigate = useNavigate();
 
     function handleTags(){
@@ -20,8 +21,27 @@ export function CreateMovies(){
         setNewTag("");
     }
 
+    async function childToParent(childdata){
+        const response = await api.get(`/movies?title=${childdata}`);
+        setMovie(response.data);
+    }
+
     function handleRemoveTag(deleted){
         setTags(prevState => prevState.filter(tag => tag!== deleted));
+    }
+
+    async function handleRemoveMovie(){
+        
+        if(movie){
+            await movie.map(mo => { 
+                const remove =window.confirm(`Deseja realmente remover o filme: ${mo.title}?`);
+                if(remove){
+                    api.delete(`/movies/${mo.id}`)
+                    navigate(-1);
+                }
+            })
+        }
+        alert("Filme removido com sucesso!");
     }
 
     async function handleSaveMovie(){
@@ -40,7 +60,7 @@ export function CreateMovies(){
     }
     return(
         <Container>
-            <Header />
+            <Header childToParent={childToParent}/>
             <Title>
                 <Link to="/">
                     <FiArrowLeft/>
@@ -90,7 +110,10 @@ export function CreateMovies(){
                 </section>
 
                 <Choose>
-                    <button class="excluir">
+                    <button 
+                        class="excluir"
+                        onClick={handleRemoveMovie}
+                    >
                         Excluir filme
                     </button>
 
