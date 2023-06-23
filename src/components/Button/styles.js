@@ -9,7 +9,7 @@ export const Container = styled.button`
     height: 5.6rem;
     background-color: ${({theme}) => theme.COLORS.PINK};
     color: ${({theme}) => theme.COLORS.BACKGROUND_600};
-    font-size: 1.6rem;
+    font-size: clamp(.5em, 1em + 1vw, 1.6rem);
     line-height: 2.1rem;
     font-weight: 500;
     border: none;

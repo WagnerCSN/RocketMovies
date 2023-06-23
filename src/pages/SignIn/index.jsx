@@ -1,4 +1,4 @@
-import { Container, Form, Background } from "./styles"
+import { Container, Wrapper, Form, Background } from "./styles"
 import { FiMail, FiLock} from "react-icons/fi"
 import { Input } from "../../components/Input"
 import { Button } from "../../components/Button"
@@ -25,32 +25,33 @@ export function SignIn(){
 
     return(
         <Container >
+            <Wrapper>
+                <Form>
+                        <h1>RocketMovies</h1>
+                        <p>Aplicação para acompanhar tudo que assistir.</p>
 
-           <Form>
-                <h1>RocketMovies</h1>
-                <p>Aplicação para acompanhar tudo que assistir.</p>
+                        <h2>Faça seu login</h2>
 
-                <h2>Faça seu login</h2>
+                        <Input 
+                            placeholder="E-mail"
+                            type="text"
+                            icon={FiMail}
+                            onChange={e => setEmail(e.target.value)}
+                        />
+                        <Input 
+                            placeholder="Senha"
+                            type="password"
+                            icon={FiLock}
+                            onChange={e => setPassword(e.target.value)}
+                        />
+                            
+                        <Button title="Entrar" onClick={handleSignIn}/>
 
-                <Input 
-                    placeholder="E-mail"
-                    type="text"
-                    icon={FiMail}
-                    onChange={e => setEmail(e.target.value)}
-                />
-                <Input 
-                    placeholder="Senha"
-                    type="password"
-                    icon={FiLock}
-                    onChange={e => setPassword(e.target.value)}
-                />
                     
-                <Button title="Entrar" onClick={handleSignIn}/>
+                    </Form>
 
-                <Link to="/register">Criar conta</Link>
-            </Form>
-
-            <Background/>
+                    <Background/>
+            </Wrapper>
         </Container>
     )
 }

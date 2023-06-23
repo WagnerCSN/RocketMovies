@@ -13,7 +13,7 @@ export const Container = styled.div`
     margin-bottom: 0.8rem;
     
     > input{
-        font-size: 1.6rem;
+        font-size: clamp(.5em, 1em + 1vw, 1.6rem);
         width: 100%;
         height: 5.6rem;
         background: transparent;
@@ -23,7 +23,7 @@ export const Container = styled.div`
         
         &::placeholder{
             color: ${({theme}) => theme.COLORS.GRAY_100};
-            font-size: 1.6rem;
+            font-size: clamp(.5em, 1em + 1vw, 1.6rem);
             font-weight: 400;
         }
     }

@@ -14,6 +14,13 @@ export default createGlobalStyle`
         font-size: 1.6rem;
     }
 
+    body, html, #root{
+        max-height: 100vh;
+        max-width: 100vw;
+        height: 100%;
+        width: 100%;
+    }
+
     body, input, button, textarea{
         font-family: 'Roboto Slab', serif;
         font-size: 1.6rem;
