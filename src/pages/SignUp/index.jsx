@@ -37,7 +37,6 @@ export function SignUp(){
     }
     return(
         <Container>
-            <Rating/>
             <Form>
                 <h1>RocketMovies</h1>
                 <p>Aplicação para acompanhar tudo que assistir.</p>
